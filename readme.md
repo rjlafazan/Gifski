@@ -83,21 +83,23 @@ MIT (the Mac app) + [gifski library license](https://github.com/ImageOptim/gifsk
 
 ## CLI Download and Usage Directions
 
-Download CLI
-For Windows and Debian download the latest version. For macOS with Homebrew the best way is:
+### [Download CLI](https://github.com/ImageOptim/gifski/releases)
+For Windows and Debian [download the latest version](https://gif.ski/gifski-0.8.5.zip). For macOS with Homebrew the best way is:
 
-brew install gifski
-You can also get it with cargo install gifski if you have Rust installed.
+`brew install gifski`
+You can also get it with `cargo install gifski` if you have [Rust](https://www.rust-lang.org/) installed.
 Usage
-You may need ffmpeg to convert video to PNG frames first (Homebrew installation includes built-in video conversion, but other versions don't). In your favourite command line/terminal, run:
+You may need ffmpeg to convert video to PNG frames first (Homebrew installation includes built-in video conversion, but other versions don't). If you don't have ffmpeg, run: `brew install ffmpeg`. In your favourite command line/terminal, run:
 
-ffmpeg -i video.mp4 frame%04d.png
-This command takes a file named "video.mp4" and makes files "frame0001.png", "frame0002.png", "frame0003.png", etc. from it (%04d makes the frame number. Windows may need %%04d). You can usually drag'n'drop files into the terminal window to avoid typing the paths.
+
+
+`ffmpeg -i video.mp4 frame%04d.png`
+This command takes a file named "video.mp4" and makes files "frame0001.png", "frame0002.png", "frame0003.png", etc. from it (`%04d` makes the frame number. Windows may need `%%04d`). You can usually drag'n'drop files into the terminal window to avoid typing the paths.
 
 and then make the GIF from the frames:
 
-gifski -o file.gif frame*.png
-This command makes file "file.gif" from PNG files with names starting with "frame" (* stands for frame numbers). It's equivalent of gifski -o file.gif frame0001.png frame0002.png frame0003.png, etc. If you get erros about files not found, try using full paths to gifski(.exe) and the frames.
+`gifski -o file.gif frame*.png`
+This command makes file "file.gif" from PNG files with names starting with "frame" (`*` stands for frame numbers). It's equivalent of `gifski -o file.gif frame0001.png frame0002.png frame0003.png`, etc. If you get erros about files not found, try using full paths to gifski(.exe) and the frames.
 
-See gifski -h for more options. The conversion might be a bit slow, because it takes a lot of effort to nicely massage these pixels. Also, you should suffer waiting like the poor users who will be downloading these huge files.
+See `gifski -h` for more options. The conversion might be a bit slow, because it takes a lot of effort to nicely massage these pixels. Also, you should suffer waiting like the poor users who will be downloading these huge files.
 
